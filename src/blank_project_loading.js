@@ -1,5 +1,5 @@
 // Factory function to create blank project array list
-export const blankProjectLoad = () => {
+/*export const blankProjectLoad = () => {
     
     console.log("Called blankProjectLoad module...creating blank project array now");
     let projectsArray = [];
@@ -10,3 +10,4 @@ export const blankProjectLoad = () => {
     return { projectsArray, projectTitle };
 }
 
+*/
