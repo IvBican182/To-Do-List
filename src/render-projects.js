@@ -23,7 +23,7 @@ export function projectRender() {
 
         //projectRender();
       });    
-      const createTodoBtn = document.createElement("button");
+      
       if (project.active) {
         projectCard.classList.add("active-project");
         

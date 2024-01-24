@@ -1,11 +1,12 @@
 import { activeProject } from "./projects";
+import { taskRender } from "./todos_render";
 import { Projects } from "./projects";
 
 
 
 //class for Todo creation
 export class Todo {
-    constructor (title, description, dueDate, priority) {
+    constructor (title, description, date, priority) {
         this.title = title;
         this.description = description;
         this.date = date;
@@ -35,6 +36,7 @@ export function createNewTodo(event) {
         console.log(JSON.stringify(tasks));
         //taskRender();
         activeProj.todosArray.push(newTask);
+        taskRender();
         
         
         
