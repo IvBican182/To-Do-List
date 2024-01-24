@@ -1,5 +1,6 @@
 import { activeProject } from "./projects";
-import { taskRender } from "./todos_render";
+import { Projects } from "./projects";
+
 
 
 //class for Todo creation
@@ -7,7 +8,7 @@ export class Todo {
     constructor (title, description, dueDate, priority) {
         this.title = title;
         this.description = description;
-        this.dueDate = dueDate;
+        this.date = date;
         this.priority = priority;
     }
 
@@ -15,25 +16,31 @@ export class Todo {
 
 }
 //creating an empty Todo Array, will store them here
-export let tasks = [];
+export const tasks = [];
 
 //function for creating a Todo, here we pass the form input
 export function createNewTodo(event) {
     event.preventDefault();
-    const title = document.getElementById("Title").value;
-    const description = document.getElementById("Description").value;
-    const dueDate = document.getElementById("DueDate").value;
-    const priority = document.getElementById("Priority").value;
+    const title = document.querySelector("#task-title").value;
+    const description = document.querySelector("#task-description").value;
+    const date = document.querySelector("#task-date").value;
+    const priority = document.querySelector("#priority-choice").value;
 
     const activeProj = activeProject();
 
     if (activeProj) {
-        const newTask = new Todo(title, description, dueDate, priority);
-        activeProj.tasks.push(newTask);
-        taskRender();
+        const newTask = new Todo(title, description, date, priority);
+        console.log(newTask);
+        tasks.push(newTask);
+        console.log(JSON.stringify(tasks));
+        //taskRender();
+        activeProj.todosArray.push(newTask);
+        
+        
         
       }
-
+    //console.log(`PROJECTS: ${Projects}`);
+    console.log(activeProj);
 
 }
 

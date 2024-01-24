@@ -18,22 +18,9 @@ export function initialdomManip () {
 */
     } 
 
- /*   const submitFormBtn = document.querySelector(".submit-button");
-    submitFormBtn.addEventListener("click", () => {
-        const todo = createNewTodo();
-        projects[currentProject].addTodo(todo);
-        console.log(projects);
-    });
 
-
-        
-
-
-
-
-  
 //displaying a form
-export function displayTheForm() {
+/*export function displayTheForm() {
     document.getElementById("add-todo-form").style.display = "";
 }
 
@@ -46,7 +33,28 @@ export function clearForm() {
     document.getElementById("add-todo").reset();
 }
 
+ //let currentProject = 0;
 
+    //DOM  for project button onclick, when clicked it creates a Project with a name the user entered !! STILL NEEDS WORK!
+    
+        //creates a button for adding new todos
+        //displays the form from html and creates a new object when submitted
+        /*addTodoBtn.addEventListener("click",displayTheForm);
+
+        const clearButton = document.querySelector(".reset-button");
+        clearButton.addEventListener("click", clearForm); 
+*/
+
+
+/*   const submitFormBtn = document.querySelector(".submit-button");
+   submitFormBtn.addEventListener("click", () => {
+       const todo = createNewTodo();
+       projects[currentProject].addTodo(todo);
+       console.log(projects);
+   });
+
+
+ */      
 
 /*class bar {
     barMethod() {

@@ -1,9 +1,9 @@
 import { projectRender } from "./render-projects";
-//import { headerRender } from "./render-projects";
+import { headerRender } from "./render-projects";
 import { taskRender } from "./todos_render";
 
 //empty Projects Array, here we will store out projects and show them on the page later
-export let Projects = [];
+export const Projects = [];
 
 //project creation class
 export class Project {
@@ -35,6 +35,8 @@ export function createNewProject(event) {
     console.log(newProject);
     //rendering project on the page
     projectRender();
+    headerRender();
+    console.log(JSON.stringify(Projects));
     //projectRender();
     //return newProject;
     

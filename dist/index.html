@@ -9,6 +9,119 @@
 </head>
 <body>
     <div class="content">
+      <div class="container">
+        <div class="side-bar">
+          <div class="side-header">Projects</div>
+          <div class="projects"></div>
+          <div class="add-project-button">
+            <button class="create-project">Create Project</button>
+          </div>
+          <div class="project-form-container">
+            <form class="project-form">
+              <label for="project-name">Your project name:</label>
+              <input
+                type="text"
+                id="project-name"
+                name="project-name"
+                placeholder="Add a new to-do project"
+                required
+                minlength="3"
+                maxlength="30"
+              />
+              <div class="project-buttons">
+                <button class="add-project" type="submit" method="get">
+                  Create project
+                </button>
+                <button class="cancel-project" type="submit" method="get">
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="task-form-container">
+            <form class="task-form">
+              <label for="task-title">Your task:</label>
+              <input type="text" id="task-title" name="task-title" />
+              <label for="task-description">Your task description:</label>
+              <input
+                type="text"
+                id="task-description"
+                name="task-description"
+              />
+              <label for="task-date">Your task deadline:</label>
+              <input type="date" id="task-date" name="task-date" />
+              <label for="priority-choice">Choose your priority:</label>
+              <input
+                list="priority"
+                id="priority-choice"
+                name="priority-choice"
+              />
+              <datalist id="priority">
+                <option value="High">High</option>
+                <option value="Average">Average</option>
+                <option value="Low">Low</option>
+              </datalist>
+              <div class="task-buttons">
+                <button class="add-task" type="submit" method="get">
+                  Add Task
+                </button>
+                <button class="cancel-task" type="submit" method="get">
+                  Cancel task
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="edit-task-form-container" style="display: none">
+          <form class="edit-task-form">
+            <label for="edit-task-title">Your task:</label>
+            <input type="text" id="edit-task-title" name="edit-task-title" />
+            <label for="edit-task-description">Your task description:</label>
+            <input
+              type="text"
+              id="edit-task-description"
+              name="edit-task-description"
+            />
+            <label for="edit-task-date">Your task deadline:</label>
+            <input type="date" id="edit-task-date" name="edit-task-date" />
+            <label for="edit-priority-choice">Choose your priority:</label>
+            <input
+              list="edit-priority"
+              id="edit-priority-choice"
+              name="edit-priority-choice"
+            />
+            <datalist id="edit-priority">
+              <option value="High">High</option>
+              <option value="Average">Average</option>
+              <option value="Low">Low</option>
+            </datalist>
+            <div class="edit-task-buttons">
+              <button class="edit-add-task" type="button">Add Task</button>
+              <button class="edit-cancel-task" type="submit" method="get">
+                Cancel task
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="header"></div>
+        <div class="main">
+          <div class="render-task-form">
+            <button class="task-btn-render">
+              <img
+                class="add-svg"
+                alt="add-task-plus-picture"
+                src="assets/create.svg"
+              />
+              Create task
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js" defer></script>
+  </body>
+<!--<body>
+    <div class="content">
         <h1>To Do List App</h1>
         <div class="container">
             <div class="all-projects"></div>
@@ -41,8 +154,8 @@
             
         </div>
 
-        <div class="form">
-            <!--<button class="add-todo-button">Add New ToDo</button>-->
+        <div class="todo-form-container"> 
+            <button class="add-todo-button">Add New ToDo</button>
             <div id="add-todo-form" style="display:none">
                 <form id="add-todo">
                     <label for="Title">Title:</label>
@@ -57,16 +170,12 @@
                         <option value="Medium">Medium</option>
                         <option value="High">High</option>
                     </select>
-                    <label for="CheckList">CheckList Items Added (if any):</label>
-                    <ul class="todo-ul"></ul>
                 </form>
-                <input type="text" id="add-to-checklist" name="add-to-checklist" placeholder="Type checklist item here">
-                <button class="add-to-checklist">Add Item To Checklist</button>
-                <br>
                 <button type="submit" class="submit-button">Submit ToDo</button>
                 <button type="reset" class="reset-button">Reset Form</button>
             </div>
         </div>
     </div>
-</body>
+</body>-->
+
 </html>
