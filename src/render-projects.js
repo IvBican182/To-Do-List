@@ -2,6 +2,7 @@ import { Projects, switchActiveProject, activeProject } from "./projects";
 import { clearForm, displayTheForm } from "./todos_render";
 import { createNewTodo } from "./create_todo";
 import { taskRender } from "./todos_render";
+import { saveToStorage } from "./projects";
 
 export function projectRender() {
     const projectsDiv = document.querySelector(".projects");
@@ -37,7 +38,7 @@ export function projectRender() {
         }*/
       projectsDiv.appendChild(projectCard);
     }
-    //saveToStorage()
+    saveToStorage();
 }
 
 export function headerRender(){

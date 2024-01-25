@@ -3,7 +3,7 @@ import { headerRender } from "./render-projects";
 import { taskRender } from "./todos_render";
 
 //empty Projects Array, here we will store out projects and show them on the page later
-export const Projects = [];
+export let Projects = [];
 
 //project creation class
 export class Project {
@@ -21,6 +21,13 @@ export class Project {
    // }
 }
 
+export function defaultProject() {
+    const DefaultProject = new Project("Default Project", "");
+    Projects.push(DefaultProject);
+    projectRender();
+    headerRender();
+  }
+
 //project creating function
 export function createNewProject(event) {
     //prevents output from dissapearing from the console
@@ -36,6 +43,7 @@ export function createNewProject(event) {
     //rendering project on the page
     projectRender();
     headerRender();
+    saveToStorage();
     console.log(JSON.stringify(Projects));
     //projectRender();
     //return newProject;
@@ -50,3 +58,19 @@ export function activeProject() {
   export function switchActiveProject(index) {
     Projects.forEach((project, i) => (project.active = i === index));
 }
+
+export function saveToStorage(){
+    localStorage.setItem('projects', JSON.stringify(Projects))
+  }
+  
+  export function loadFromStorage(){
+    const storedProjects = localStorage.getItem('projects');
+    if(storedProjects){
+        Projects = JSON.parse(storedProjects);
+        projectRender();
+        taskRender();
+    }
+    else{
+        defaultProject();
+    }
+  }

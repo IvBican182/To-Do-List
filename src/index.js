@@ -1,13 +1,14 @@
-import { CreateToDo } from './create_todo.js';
-import { blankProjectLoad } from './blank_project_loading.js';
 import { taskRender } from './todos_render.js';
 import { createNewProject } from './projects.js';
 import { projectRender } from "./render-projects";
 import { createNewTodo } from './create_todo.js';
-import { displayTheForm } from './todos_render.js';
 import { removeProject } from "./projects_manip.js"
 import { removeTask } from './todos-manip.js';
+import { EditTask } from "./todos-manip.js";
+import { loadFromStorage } from "./projects";
 
+
+loadFromStorage();
 
 //reaching the add-project button
 const btnProject = document.querySelector(".add-project");
@@ -51,7 +52,7 @@ btnRenderProject.addEventListener("click", function () {
   projectForm.style.display = "flex";
 });
 
-/*const editTaskForm = document.querySelector(".edit-task-form-container");
+const editTaskForm = document.querySelector(".edit-task-form-container");
 const taskForm = document.querySelector(".task-form-container");
 document.addEventListener("click", function (event) {
   const target = event.target;
@@ -67,7 +68,7 @@ document.addEventListener("click", function (event) {
     editTaskForm.style.display = "flex";
   }
 });
-*/
+
 const editBtn = document.querySelector(".edit-add-task");
 editBtn.addEventListener("click", function (event) {
   event.preventDefault();

@@ -1,6 +1,6 @@
 import { activeProject } from "./projects";
 import { taskRender } from "./todos_render";
-import { Projects } from "./projects";
+import { saveToStorage } from "./projects";
 
 
 
@@ -37,7 +37,7 @@ export function createNewTodo(event) {
         //taskRender();
         activeProj.todosArray.push(newTask);
         taskRender();
-        
+        saveToStorage();
         
         
       }
