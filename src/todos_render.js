@@ -5,12 +5,12 @@ import { activeProject } from "./projects";
 export function todoRender() {
   const main = document.querySelector(".main");
   const taskRenderBtn = document.createElement("div");
-  taskRenderBtn.classList.add("render-task-form");
+  taskRenderBtn.classList.add("render-todo-form");
   taskRenderBtn.innerHTML = `
-  <p class="task-btn-render">
+  <p class="todo-btn-render">
     <img
       class="add-svg"
-      alt="add-task-plus-picture"
+      alt="add-todo-plus-picture"
       src="assets/create.svg"
     />
      To Do
@@ -20,19 +20,16 @@ export function todoRender() {
   if (activeProj) {
     activeProj.todosArray.forEach((todo, index) => {
       let todoCard = document.createElement("div");
-      todoCard.innerHTML = `<div class="task-card" data-index='${index}'>
-        <div class='left-side-task'>
-        <label class='checkbox-cont'>
-        <input class="checkbox" type="checkbox" />
-        </label>
-        <h1 class="task-title">${todo.title}</h1>
+      todoCard.innerHTML = `<div class="todo-card" data-index='${index}'>
+        <div class='left-side-todo'>
+        <h1 class="todo-title">${todo.title}</h1>
         <h2 class='description'>${todo.description}</h2>
         </div>
-        <div class='right-side-task'>
+        <div class='right-side-todo'>
         <h2 class='date'>${todo.date}</h2>
         <h2 class='priority'>${todo.priority}</h2>
-        <button class='delete-task'>Delete</button>
-        <img class='edit-task-svg' data-index='${index}' src='assets/edit.svg' alt='edit-svg'>
+        <button class='delete-todo'>Delete</button>
+        <img class='edit-todo-svg' data-index='${index}' src='assets/edit.svg' alt='edit-svg'>
         </div>
     </div>`;
       main.appendChild(todoCard);
@@ -45,7 +42,7 @@ export function todoRender() {
 
 //projecting the ToDo form function
 export function displayTheForm() {
-    const toDoForm = document.querySelector(".task-form");
+    const toDoForm = document.querySelector(".todo-form");
     //document.getElementById("add-todo-form").style.display = "";
     if(toDoForm.style.display === "none") {
         toDoForm.style.display = "";

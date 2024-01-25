@@ -33,7 +33,7 @@ cancelProjectBtn.addEventListener("click", function () {
 });
         
 //submits a todo and exists todo Form
-const submitTodoBtn = document.querySelector(".add-task");
+const submitTodoBtn = document.querySelector(".add-todo");
 submitTodoBtn.addEventListener("click", createNewTodo);
 submitTodoBtn.addEventListener("click", todoRender);
 submitTodoBtn.addEventListener("click", function () {
@@ -44,8 +44,8 @@ submitTodoBtn.addEventListener("click", function () {
 
 document.querySelector(".main").addEventListener("click", function (event) {
   const target = event.target;
-  if (target.classList.contains("delete-task")) {
-    const taskIndex = target.closest(".task-card").dataset.index;
+  if (target.classList.contains("delete-todo")) {
+    const taskIndex = target.closest(".todo-card").dataset.index;
     removeTask(taskIndex);
   }
 });
@@ -76,27 +76,27 @@ function projectExistCheck () {
 }
 
 
-const editTaskForm = document.querySelector(".edit-task-form-container");
-const toDoForm = document.querySelector(".task-form-container");
+const editTaskForm = document.querySelector(".edit-todo-form-container");
+const toDoForm = document.querySelector(".todo-form-container");
 document.addEventListener("click", function (event) {
   const target = event.target;
-  if (target.classList.contains("task-btn-render")) {
+  if (target.classList.contains("todo-btn-render")) {
     projectExistCheck();
   } else if (target.classList.contains("add-svg")) {
     projectExistCheck();                             
-  } else if (target.classList.contains("cancel-task")) {
+  } else if (target.classList.contains("cancel-todo")) {
     toDoForm.style.display = "none";
   } else if (target.classList.contains("cancel-project")) {
     projectForm.style.display = "none";
-  } else if (target.classList.contains("edit-task-svg")) {
+  } else if (target.classList.contains("edit-todo-svg")) {
     editTaskForm.style.display = "flex";
   }
 });
 
-const editBtn = document.querySelector(".edit-add-task");
+const editBtn = document.querySelector(".edit-add-todo");
 editBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  const editForm = document.querySelector(".edit-task-form-container");
+  const editForm = document.querySelector(".edit-todo-form-container");
   const editTaskIndex = editForm.dataset.index;
   EditTask(editTaskIndex);
   todoRender();
@@ -104,9 +104,9 @@ editBtn.addEventListener("click", function (event) {
 
 document.querySelector(".main").addEventListener("click", function (event) {
   const target = event.target;
-  if (target.classList.contains("edit-task-svg")) {
+  if (target.classList.contains("edit-todo-svg")) {
     const taskIndex = target.dataset.index;
-    const editForm = document.querySelector(".edit-task-form-container");
+    const editForm = document.querySelector(".edit-todo-form-container");
     editForm.dataset.index = taskIndex;
     editTaskForm.style.display = "flex";
   }

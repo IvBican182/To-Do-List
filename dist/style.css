@@ -33,7 +33,7 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.task-form-container {
+.todo-form-container {
   display: none;
   justify-content: center;
   flex-direction: column;
@@ -46,7 +46,7 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.edit-task-form-container{
+.edit-todo-form-container{
   display: none;
   justify-content: center;
   flex-direction: column;
@@ -91,7 +91,7 @@ body {
   width: 2rem;
 }
 
-.task-btn-render {
+.todo-btn-render {
   border: none;
   display: flex;
   align-items: center;
@@ -102,12 +102,12 @@ body {
   transition: 0.5s;
 }
 
-.task-btn-render:hover {
+.todo-btn-render:hover {
   background-color: #a1cfab;
   transition: 0.5;
 }
 
-.render-task-form {
+.render-todo-form {
   padding: 1rem;
   display: flex;
   justify-content: flex-end;
@@ -135,7 +135,7 @@ body {
   font-size: 1.3rem;
 }
 
-.task-form, .edit-task-form{
+.todo-form, .edit-todo-form{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -146,25 +146,25 @@ body {
   color: var(--main-font-color);
 }
 
-.task-form input {
+.todo-form input {
   height: 1.5rem;
   font-size: 1.5rem;
 }
 
-.task-form label {
+.todo-form label {
   font-size: 2rem;
 }
 
-.edit-task-form input{
+.edit-todo-form input{
   height: 1.5rem;
   font-size: 1.5rem;
 }
 
-.edit-task-form label{
+.edit-todo-form label{
   font-size: 2rem;
 }
 
-.add-task, .edit-add-task{
+.add-todo, .edit-add-todo{
   cursor: pointer;
   text-decoration: none;
   background-color: #4ade80;
@@ -177,13 +177,13 @@ body {
   align-self: center;
 }
 
-.add-task:hover {
+.add-todo:hover {
   color: var(--black-font-color);
   background-color: #bbf7d0;
   transition: 0.7s;
 }
 
-.cancel-task, .edit-cancel-task{
+.cancel-todo, .edit-cancel-todo{
   cursor: pointer;
   text-decoration: none;
   background-color: #ef4444;
@@ -196,14 +196,14 @@ body {
   align-self: center;
 }
 
-.cancel-task:hover{
+.cancel-todo:hover{
   color: var(--black-font-color);
   background-color: #dc2626;
   border: 2px solid #f87171;
   transition: 0.7s;
 }
 
-.right-side-task {
+.right-side-todo {
   display: flex;
   gap: 20px;
   padding-right: 1rem;
@@ -269,14 +269,14 @@ body {
   background-color: #eee;
 }
 
-.left-side-task {
+.left-side-todo {
   display: flex;
   align-items: center;
   gap: 20px;
   padding-left: 1rem;
 }
 
-.task-card {
+.todo-card {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -287,7 +287,7 @@ body {
   margin: 1rem;
 }
 
-.task-card:hover {
+.todo-card:hover {
   cursor: pointer;
   transition: 0.5s;
   padding: 0.2rem;
@@ -399,7 +399,7 @@ body {
   cursor: pointer;
 }
 
-.delete-task {
+.delete-todo {
   text-decoration: none;
   cursor: pointer;
   background-color: #84a98c;
@@ -411,17 +411,17 @@ body {
   font-weight: bold;
 }
 
-.delete-task:hover {
+.delete-todo:hover {
   background-color: #a1cfab;
 }
 
-.edit-task-svg{
+.edit-todo-svg{
   width: 1.5rem;
   border-radius: 20px;
   padding: 1rem;
 }
 
-.edit-task-svg:hover{
+.edit-todo-svg:hover{
   background-color: #a1cfab;
 }
 

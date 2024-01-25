@@ -22,9 +22,9 @@ export const todos = [];
 //function for creating a Todo, here we pass the form input
 export function createNewTodo(event) {
     event.preventDefault();
-    const title = document.querySelector("#task-title").value;
-    const description = document.querySelector("#task-description").value;
-    const date = document.querySelector("#task-date").value;
+    const title = document.querySelector("#todo-title").value;
+    const description = document.querySelector("#todo-description").value;
+    const date = document.querySelector("#todo-date").value;
     const priority = document.querySelector("#priority-choice").value;
 
     const activeProj = activeProject();
