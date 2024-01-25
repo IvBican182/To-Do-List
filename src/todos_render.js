@@ -2,10 +2,10 @@ import { activeProject } from "./projects";
 
 
 
-export function taskRender() {
+export function todoRender() {
   const main = document.querySelector(".main");
   const taskRenderBtn = document.createElement("div");
-  taskRenderBtn.classList.add('render-task-form');
+  taskRenderBtn.classList.add("render-task-form");
   taskRenderBtn.innerHTML = `
   <p class="task-btn-render">
     <img
@@ -13,7 +13,7 @@ export function taskRender() {
       alt="add-task-plus-picture"
       src="assets/create.svg"
     />
-    Add To Do
+     To Do
   </p>`;
   main.innerHTML = "";
   const activeProj = activeProject();

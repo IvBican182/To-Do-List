@@ -1,7 +1,5 @@
 import { allProjects, switchActiveProject, activeProject } from "./projects";
-import { clearForm, displayTheForm } from "./todos_render";
-import { createNewTodo } from "./create_todo";
-import { taskRender } from "./todos_render";
+import { todoRender } from "./todos_render";
 import { saveToStorage } from "./projects";
 
 export function projectRender() {
@@ -19,7 +17,7 @@ export function projectRender() {
       projectCard.addEventListener("click", () => {
         switchActiveProject(i);
         projectRender();
-        taskRender();
+        todoRender();
         headerRender();
 
         

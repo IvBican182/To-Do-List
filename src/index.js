@@ -1,4 +1,4 @@
-import { taskRender } from './todos_render.js';
+import { todoRender } from './todos_render.js';
 import { createNewProject } from './projects.js';
 import { projectRender } from "./render-projects";
 import { createNewTodo } from './create_todo.js';
@@ -35,7 +35,7 @@ cancelProjectBtn.addEventListener("click", function () {
 //submits a todo and exists todo Form
 const submitTodoBtn = document.querySelector(".add-task");
 submitTodoBtn.addEventListener("click", createNewTodo);
-submitTodoBtn.addEventListener("click", taskRender);
+submitTodoBtn.addEventListener("click", todoRender);
 submitTodoBtn.addEventListener("click", function () {
   toDoForm.style.display = "none";
  
@@ -69,6 +69,7 @@ btnRenderProject.addEventListener("click", function () {
 function projectExistCheck () {
   if (allProjects.length === 0) {
     toDoForm.style.display = "none";
+    alert("No projects available!");
   } else {
     toDoForm.style.display = "flex";
   }
@@ -98,7 +99,7 @@ editBtn.addEventListener("click", function (event) {
   const editForm = document.querySelector(".edit-task-form-container");
   const editTaskIndex = editForm.dataset.index;
   EditTask(editTaskIndex);
-  taskRender();
+  todoRender();
 });
 
 document.querySelector(".main").addEventListener("click", function (event) {
@@ -110,3 +111,4 @@ document.querySelector(".main").addEventListener("click", function (event) {
     editTaskForm.style.display = "flex";
   }
 });
+

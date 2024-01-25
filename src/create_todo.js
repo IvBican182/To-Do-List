@@ -1,5 +1,5 @@
 import { activeProject } from "./projects";
-import { taskRender } from "./todos_render";
+import { todoRender } from "./todos_render";
 import { saveToStorage } from "./projects";
 
 
@@ -35,7 +35,7 @@ export function createNewTodo(event) {
         console.log(JSON.stringify(todos));
         //finaly we push a todo to our active projects Array
         activeProj.todosArray.push(newTodo);
-        taskRender();
+        todoRender();
         saveToStorage();
         
         

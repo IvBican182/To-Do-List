@@ -1,5 +1,5 @@
 import { activeProject } from "./projects";
-import { taskRender } from "./todos_render";
+import { todoRender } from "./todos_render";
 import { saveToStorage } from "./projects";
 
 export function removeTask(index) {
@@ -7,7 +7,7 @@ export function removeTask(index) {
 
   if (activeProj) {
     activeProj.todosArray.splice(index, 1);
-    taskRender();
+    todoRender();
     saveToStorage();
   }  
 }

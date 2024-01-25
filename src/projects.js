@@ -1,6 +1,6 @@
 import { projectRender } from "./render-projects";
 import { headerRender } from "./render-projects";
-import { taskRender } from "./todos_render";
+import { todoRender } from "./todos_render";
 
 //empty Projects Array, here we will store out projects and show them on the page later
 export let allProjects = [];
@@ -15,10 +15,7 @@ export class Project {
         //this.active property will later determine which project is selected and/or ready to take in our Todos
         this.active = true;  
     }
-    //class method for pushing todos. I might change this later
-   //addTodo(todo) {
-        //this.todosArray.push(todo);
-   // }
+    
 }
 
 export function defaultProject() {
@@ -46,8 +43,7 @@ export function createNewProject(event) {
     headerRender();
     saveToStorage();
     console.log(JSON.stringify(allProjects));
-    //projectRender();
-    //return newProject;
+    
     
 }
 
@@ -69,7 +65,7 @@ export function saveToStorage(){
     if(storedProjects){
         allProjects = JSON.parse(storedProjects);
         projectRender();
-        taskRender();
+        todoRender();
     }
     else{
         defaultProject();
