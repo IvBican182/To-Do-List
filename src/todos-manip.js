@@ -8,7 +8,7 @@ export function removeTask(index) {
   if (activeProj) {
     activeProj.todosArray.splice(index, 1);
     taskRender();
-    //saveToStorage();
+    saveToStorage();
   }  
 }
 

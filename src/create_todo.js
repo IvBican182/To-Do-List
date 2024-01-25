@@ -16,8 +16,8 @@ export class Todo {
 
 
 }
-//creating an empty Todo Array, will store them here
-export const tasks = [];
+//creating an empty Todo Array,we will store them here
+export const todos = [];
 
 //function for creating a Todo, here we pass the form input
 export function createNewTodo(event) {
@@ -28,50 +28,20 @@ export function createNewTodo(event) {
     const priority = document.querySelector("#priority-choice").value;
 
     const activeProj = activeProject();
-
+    //if the current project is active (if we clicked on it) it creates a new Todo and pushes it to our Todos array
     if (activeProj) {
-        const newTask = new Todo(title, description, date, priority);
-        console.log(newTask);
-        tasks.push(newTask);
-        console.log(JSON.stringify(tasks));
-        //taskRender();
-        activeProj.todosArray.push(newTask);
+        const newTodo = new Todo(title, description, date, priority);
+        todos.push(newTodo);
+        console.log(JSON.stringify(todos));
+        //finaly we push a todo to our active projects Array
+        activeProj.todosArray.push(newTodo);
         taskRender();
         saveToStorage();
         
         
       }
-    //console.log(`PROJECTS: ${Projects}`);
+    
     console.log(activeProj);
 
 }
-
-/*export class CreateProject {
-    constructor(projectArray, projectTitle ) {
-        this.projectArray = []
-        this.projectTitle = prompt("Please enter a name for the project:");
-        this.projectArray.push(this.projectTitle);
-        console.log(this.projectArray);
-        return { projectArray, projectTitle };
-    }
-
-   newTodo(){
-        this.todo = new CreateToDo();
-        this.projectArray.push(this.todo);
-        console.log(this.todo);
-        return this.todo;
-        
-    }
-
-    get allTodos() {
-        console.log(this.projectArray);
-        return this.projectArray;
-    }
-
-}
-
-//const newProject = new CreateProject();
-/*let newProject = new Project();
-newProject.newTodo();*/
-//export const toDo = newProject.newTodo();
 

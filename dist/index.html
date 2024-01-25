@@ -24,9 +24,6 @@
                 id="project-name"
                 name="project-name"
                 placeholder="Add a new to-do project"
-                required
-                minlength="3"
-                maxlength="30"
               />
               <div class="project-buttons">
                 <button class="add-project" type="submit" method="get">
@@ -40,17 +37,17 @@
           </div>
           <div class="task-form-container">
             <form class="task-form">
-              <label for="task-title">Your task:</label>
+              <label for="task-title">Your todo title:</label>
               <input type="text" id="task-title" name="task-title" />
-              <label for="task-description">Your task description:</label>
+              <label for="task-description">Description:</label>
               <input
                 type="text"
                 id="task-description"
                 name="task-description"
               />
-              <label for="task-date">Your task deadline:</label>
+              <label for="task-date">Deadline:</label>
               <input type="date" id="task-date" name="task-date" />
-              <label for="priority-choice">Choose your priority:</label>
+              <label for="priority-choice">Priority:</label>
               <input
                 list="priority"
                 id="priority-choice"
@@ -63,10 +60,10 @@
               </datalist>
               <div class="task-buttons">
                 <button class="add-task" type="submit" method="get">
-                  Add Task
+                  Add 
                 </button>
                 <button class="cancel-task" type="submit" method="get">
-                  Cancel task
+                  Cancel 
                 </button>
               </div>
             </form>
@@ -96,9 +93,9 @@
               <option value="Low">Low</option>
             </datalist>
             <div class="edit-task-buttons">
-              <button class="edit-add-task" type="button">Add Task</button>
+              <button class="edit-add-task" type="button">Save changes</button>
               <button class="edit-cancel-task" type="submit" method="get">
-                Cancel task
+                Cancel 
               </button>
             </div>
           </form>
@@ -112,7 +109,7 @@
                 alt="add-task-plus-picture"
                 src="assets/create.svg"
               />
-              Create task
+              Add todo
             </button>
           </div>
         </div>
