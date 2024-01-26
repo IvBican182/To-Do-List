@@ -18,13 +18,13 @@ export class Project {
     
 }
 
-export function defaultProject() {
+/*export function defaultProject() {
     const DefaultProject = new Project("Default Project", "");
     allProjects.push(DefaultProject);
     projectRender();
     headerRender();
   }
-
+*/
 //project creating function
 export function createNewProject(event) {
     //prevents output from dissapearing from the console
@@ -36,14 +36,14 @@ export function createNewProject(event) {
     
     //pushing our new project to our global array of projects
     allProjects.push(newProject);
-    console.log("pushing the project array to AllProjectsDiv");
-    console.log(newProject);
+    //console.log("pushing the project array to AllProjectsDiv");
+    //console.log(newProject);
     //rendering project on the page
     projectRender();
     headerRender();
     saveToStorage();
-    console.log(JSON.stringify(allProjects));
-    
+    //console.log(JSON.stringify(allProjects));
+    console.log(allProjects);
     
 }
 
@@ -67,7 +67,10 @@ export function saveToStorage(){
         projectRender();
         todoRender();
     }
-    else{
+}/*else{
         defaultProject();
     }
   }
+  */
+
+ 

@@ -1,6 +1,6 @@
 import { todoRender } from './todos_render.js';
 import { createNewProject } from './projects.js';
-import { projectRender } from "./render-projects";
+import { headerRender, projectRender } from "./render-projects";
 import { createNewTodo } from './create_todo.js';
 import { removeProject } from "./projects_manip.js"
 import { removeTask } from './todos-manip.js';
@@ -59,10 +59,11 @@ document.querySelector(".projects").addEventListener("click", function (event) {
   }
 });
  
-//displaying the project form when create button is clicked
+//displaying the project form when create button is clicked, resets previous input
 const btnRenderProject = document.querySelector(".create-project");
 btnRenderProject.addEventListener("click", function () {
   projectForm.style.display = "flex";
+  resetProjForm();
 });
 
 //checks if a projects exist, makes todos unavailable for adding
@@ -81,9 +82,13 @@ const toDoForm = document.querySelector(".todo-form-container");
 document.addEventListener("click", function (event) {
   const target = event.target;
   if (target.classList.contains("todo-btn-render")) {
+    //checks if there are any projects
     projectExistCheck();
+    //resets the todo form 
+    resetTodoForm();
   } else if (target.classList.contains("add-svg")) {
-    projectExistCheck();                             
+    projectExistCheck(); 
+    resetTodoForm();                            
   } else if (target.classList.contains("cancel-todo")) {
     toDoForm.style.display = "none";
   } else if (target.classList.contains("cancel-project")) {
@@ -112,3 +117,16 @@ document.querySelector(".main").addEventListener("click", function (event) {
   }
 });
 
+//clears project form input fields
+function resetProjForm () {
+  const projForm = document.querySelector(".project-form");
+  projForm.reset();
+
+}
+
+//clears to do form input fields
+function resetTodoForm () {
+  const todoForm = document.querySelector(".todo-form");
+  todoForm.reset();
+
+}

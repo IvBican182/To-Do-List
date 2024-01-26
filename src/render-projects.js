@@ -46,5 +46,7 @@ export function headerRender(){
     desc.classList.add('project-info')
     desc.innerHTML=(`<h1 class="title" >${activeProj.projectTitle}</h1>`)
     header.appendChild(desc);
+  } else {
+    header.innerHTML = "";
   }
 }

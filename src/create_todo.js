@@ -32,16 +32,16 @@ export function createNewTodo(event) {
     if (activeProj) {
         const newTodo = new Todo(title, description, date, priority);
         todos.push(newTodo);
-        console.log(JSON.stringify(todos));
+        
         //finaly we push a todo to our active projects Array
         activeProj.todosArray.push(newTodo);
         todoRender();
         saveToStorage();
-        
+        console.log(newTodo);
         
       }
     
-    console.log(activeProj);
+    
 
 }
 
