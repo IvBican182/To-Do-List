@@ -1,6 +1,6 @@
 import { activeProject } from "./projects";
-import { taskRender } from "./todos_render";
-import { Projects } from "./projects";
+import { todoRender } from "./todos_render";
+import { saveToStorage } from "./projects";
 
 
 
@@ -16,62 +16,32 @@ export class Todo {
 
 
 }
-//creating an empty Todo Array, will store them here
-export const tasks = [];
+//creating an empty Todo Array,we will store them here
+export const todos = [];
 
 //function for creating a Todo, here we pass the form input
 export function createNewTodo(event) {
     event.preventDefault();
-    const title = document.querySelector("#task-title").value;
-    const description = document.querySelector("#task-description").value;
-    const date = document.querySelector("#task-date").value;
+    const title = document.querySelector("#todo-title").value;
+    const description = document.querySelector("#todo-description").value;
+    const date = document.querySelector("#todo-date").value;
     const priority = document.querySelector("#priority-choice").value;
 
     const activeProj = activeProject();
-
+    //if the current project is active (if we clicked on it) it creates a new Todo and pushes it to our Todos array
     if (activeProj) {
-        const newTask = new Todo(title, description, date, priority);
-        console.log(newTask);
-        tasks.push(newTask);
-        console.log(JSON.stringify(tasks));
-        //taskRender();
-        activeProj.todosArray.push(newTask);
-        taskRender();
+        const newTodo = new Todo(title, description, date, priority);
+        todos.push(newTodo);
         
-        
+        //finaly we push a todo to our active projects Array
+        activeProj.todosArray.push(newTodo);
+        todoRender();
+        saveToStorage();
+        console.log(newTodo);
         
       }
-    //console.log(`PROJECTS: ${Projects}`);
-    console.log(activeProj);
+    
+    
 
 }
-
-/*export class CreateProject {
-    constructor(projectArray, projectTitle ) {
-        this.projectArray = []
-        this.projectTitle = prompt("Please enter a name for the project:");
-        this.projectArray.push(this.projectTitle);
-        console.log(this.projectArray);
-        return { projectArray, projectTitle };
-    }
-
-   newTodo(){
-        this.todo = new CreateToDo();
-        this.projectArray.push(this.todo);
-        console.log(this.todo);
-        return this.todo;
-        
-    }
-
-    get allTodos() {
-        console.log(this.projectArray);
-        return this.projectArray;
-    }
-
-}
-
-//const newProject = new CreateProject();
-/*let newProject = new Project();
-newProject.newTodo();*/
-//export const toDo = newProject.newTodo();
 

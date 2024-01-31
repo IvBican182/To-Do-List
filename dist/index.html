@@ -25,32 +25,30 @@
                 name="project-name"
                 placeholder="Add a new to-do project"
                 required
-                minlength="3"
-                maxlength="30"
               />
-              <div class="project-buttons">
-                <button class="add-project" type="submit" method="get">
+             <div class="project-buttons">
+                <button class="add-project" type="button" method="get">
                   Create project
                 </button>
-                <button class="cancel-project" type="submit" method="get">
+                <button class="cancel-project" type="button" method="get">
                   Cancel
                 </button>
               </div>
             </form>
           </div>
-          <div class="task-form-container">
-            <form class="task-form">
-              <label for="task-title">Your task:</label>
-              <input type="text" id="task-title" name="task-title" />
-              <label for="task-description">Your task description:</label>
+          <div class="todo-form-container">
+            <form class="todo-form">
+              <label for="todo-title">Your todo title:</label>
+              <input type="text" id="todo-title" name="todo-title" />
+              <label for="todo-description">Description:</label>
               <input
                 type="text"
-                id="task-description"
-                name="task-description"
+                id="todo-description"
+                name="todo-description"
               />
-              <label for="task-date">Your task deadline:</label>
-              <input type="date" id="task-date" name="task-date" />
-              <label for="priority-choice">Choose your priority:</label>
+              <label for="todo-date">Deadline:</label>
+              <input type="date" id="todo-date" name="todo-date" />
+              <label for="priority-choice">Priority:</label>
               <input
                 list="priority"
                 id="priority-choice"
@@ -61,29 +59,29 @@
                 <option value="Average">Average</option>
                 <option value="Low">Low</option>
               </datalist>
-              <div class="task-buttons">
-                <button class="add-task" type="submit" method="get">
-                  Add Task
+              <div class="todo-buttons">
+                <button class="add-todo" type="submit" method="get">
+                  Add 
                 </button>
-                <button class="cancel-task" type="submit" method="get">
-                  Cancel task
+                <button class="cancel-todo" type="submit" method="get">
+                  Cancel 
                 </button>
               </div>
             </form>
           </div>
         </div>
-        <div class="edit-task-form-container" style="display: none">
-          <form class="edit-task-form">
-            <label for="edit-task-title">Your task:</label>
-            <input type="text" id="edit-task-title" name="edit-task-title" />
-            <label for="edit-task-description">Your task description:</label>
+        <div class="edit-todo-form-container" style="display: none">
+          <form class="edit-todo-form">
+            <label for="edit-todo-title">Your task:</label>
+            <input type="text" id="edit-todo-title" name="edit-todo-title" />
+            <label for="edit-todo-description">Your task description:</label>
             <input
               type="text"
-              id="edit-task-description"
-              name="edit-task-description"
+              id="edit-todo-description"
+              name="edit-todo-description"
             />
-            <label for="edit-task-date">Your task deadline:</label>
-            <input type="date" id="edit-task-date" name="edit-task-date" />
+            <label for="edit-todo-date">Your task deadline:</label>
+            <input type="date" id="edit-todo-date" name="edit-todo-date" />
             <label for="edit-priority-choice">Choose your priority:</label>
             <input
               list="edit-priority"
@@ -95,24 +93,24 @@
               <option value="Average">Average</option>
               <option value="Low">Low</option>
             </datalist>
-            <div class="edit-task-buttons">
-              <button class="edit-add-task" type="button">Add Task</button>
-              <button class="edit-cancel-task" type="submit" method="get">
-                Cancel task
+            <div class="edit-todo-buttons">
+              <button class="edit-add-todo" type="button">Save changes</button>
+              <button class="edit-cancel-todo" type="submit" method="get">
+                Cancel 
               </button>
             </div>
           </form>
         </div>
         <div class="header"></div>
         <div class="main">
-          <div class="render-task-form">
-            <button class="task-btn-render">
+          <div class="render-todo-form">
+            <button class="todo-btn-render">
               <img
                 class="add-svg"
-                alt="add-task-plus-picture"
+                alt="add-todo-plus-picture"
                 src="assets/create.svg"
               />
-              Create task
+              To Do
             </button>
           </div>
         </div>
@@ -120,62 +118,4 @@
     </div>
     <script src="main.js" defer></script>
   </body>
-<!--<body>
-    <div class="content">
-        <h1>To Do List App</h1>
-        <div class="container">
-            <div class="all-projects"></div>
-            <div class="add-project-button">
-                <button class="create-project">Create Project</button>
-            </div>
-            <div class="project-form-container">
-                <form class="project-form">
-                  <label for="project-name">Your project name:</label>
-                  <input
-                    type="text"
-                    id="project-name"
-                    name="project-name"
-                    placeholder="Add a new to-do project"
-                    required
-                    minlength="3"
-                    maxlength="30"
-                  />
-                    <div class="project-buttons">
-                        <button class="add-project" type="submit" method="get">
-                            Create project
-                        </button>
-                        <button class="cancel-project" type="submit" method="get">
-                            Cancel
-                        </button>
-                    </div>
-                </form>
-            </div>
-    
-            
-        </div>
-
-        <div class="todo-form-container"> 
-            <button class="add-todo-button">Add New ToDo</button>
-            <div id="add-todo-form" style="display:none">
-                <form id="add-todo">
-                    <label for="Title">Title:</label>
-                    <input type="text" id="Title" name="Title" placeholder="Required Field" required>
-                    <label for="Description">Description:</label>
-                    <input type="text" id="Description" name="Description" placeholder="Required Field" required>
-                    <label for="DueDate">Due Date:</label>
-                    <input type="date" id="DueDate" name="DueDate" placeholder="Required Field" required>
-                    <label for="Priority">Priority:</label>
-                    <select id="Priority", name="Priority">
-                        <option value="Low">Low</option>
-                        <option value="Medium">Medium</option>
-                        <option value="High">High</option>
-                    </select>
-                </form>
-                <button type="submit" class="submit-button">Submit ToDo</button>
-                <button type="reset" class="reset-button">Reset Form</button>
-            </div>
-        </div>
-    </div>
-</body>-->
-
 </html>
