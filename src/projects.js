@@ -67,10 +67,6 @@ export function saveToStorage(){
         projectRender();
         todoRender();
     }
-}/*else{
-        defaultProject();
-    }
-  }
-  */
+}
 
  
