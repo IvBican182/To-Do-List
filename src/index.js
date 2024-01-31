@@ -1,5 +1,5 @@
 import { CreateToDo } from './create_todo.js';
-import { blankProjectLoad } from './blank_project_loading.js';
+
 import { taskRender } from './todos_render.js';
 import { createNewProject } from './projects.js';
 import { projectRender } from "./render-projects";
